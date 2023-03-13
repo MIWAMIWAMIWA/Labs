@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.*;
+
 @Getter
 @Setter
 @ToString
@@ -26,8 +28,7 @@ public class PreciousStone {
     }
 
     public void increasePrice(double percentage) {
-        int newPrice = (int)((percentage + 1.0) * (double)this.getPricePerCarat());
-        this.setPricePerCarat(newPrice);
+        this.setPricePerCarat((int) ((percentage + 1.0) * (double) this.getPricePerCarat()));
     }
 
     public static void main(String[] args) {
@@ -38,8 +39,7 @@ public class PreciousStone {
         miwa1.setClarity(12);
         miwa2.setClarity(34);
         PreciousStone[] arr = new PreciousStone[]{miwa1, miwa2, miwa3, miwa4};
-        for(int i = 0; i < arr.length; ++i) {
-            PreciousStone preciousStone = arr[i];
+        for (PreciousStone preciousStone : arr) {
             System.out.println(preciousStone.toString());
         }
 
