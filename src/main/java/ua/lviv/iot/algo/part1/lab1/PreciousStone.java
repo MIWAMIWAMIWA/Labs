@@ -1,6 +1,8 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
@@ -38,7 +40,7 @@ public class PreciousStone extends Stone {
 
     @Override
     public String toString() {
-        return "PreciousStone(name=" + getName() + ", color=" + getColor() + ", carat="+ getCarat()
+        return "PreciousStone(name=" + getName() + ", color=" + getColor() + ", carat=" + getCarat()
                 + ", clarity=" + getClarity() + ", pricePerCarat=" + getPricePerCarat() + ")";
     }
 

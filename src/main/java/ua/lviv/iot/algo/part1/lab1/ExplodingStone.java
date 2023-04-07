@@ -1,5 +1,8 @@
 package ua.lviv.iot.algo.part1.lab1;
-import lombok.*;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
@@ -7,18 +10,21 @@ import lombok.*;
 public class ExplodingStone extends Stone {
     private int amount;
     private int pricePerAmount;
+
     @Override
-    public int getFullPrice(){
-        return getAmount()*getPricePerAmount();
+    public int getFullPrice() {
+        return getAmount() * getPricePerAmount();
     }
-    public ExplodingStone(String name,String color,int amount ,int pricePerAmount){
-        super(name,color);
-        this.amount=amount;
-        this.pricePerAmount=pricePerAmount;
+
+    public ExplodingStone(String name, String color, int amount, int pricePerAmount) {
+        super(name, color);
+        this.amount = amount;
+        this.pricePerAmount = pricePerAmount;
     }
+
     @Override
-    public String toString(){
-        return "ExplodingStone(name="+getName()+", color="+getColor()+
-                ", amount="+getAmount()+", pricePerAmount="+getPricePerAmount()+")";
+    public String toString() {
+        return "ExplodingStone(name=" + getName() + ", color=" + getColor() +
+                ", amount=" + getAmount() + ", pricePerAmount=" + getPricePerAmount() + ")";
     }
 }
