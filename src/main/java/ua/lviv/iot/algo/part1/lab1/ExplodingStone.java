@@ -3,10 +3,12 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class ExplodingStone extends Stone {
     private int amount;
     private int pricePerAmount;
@@ -16,15 +18,10 @@ public class ExplodingStone extends Stone {
         return getAmount() * getPricePerAmount();
     }
 
-    public ExplodingStone(String name, String color, int amount, int pricePerAmount) {
+    public ExplodingStone(final String name,final String color,final int amount, final int pricePerAmount) {
         super(name, color);
         this.amount = amount;
         this.pricePerAmount = pricePerAmount;
     }
 
-    @Override
-    public String toString() {
-        return "ExplodingStone(name=" + getName() + ", color=" + getColor() +
-                ", amount=" + getAmount() + ", pricePerAmount=" + getPricePerAmount() + ")";
-    }
 }

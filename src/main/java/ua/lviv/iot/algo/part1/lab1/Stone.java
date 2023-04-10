@@ -15,7 +15,7 @@ public abstract class Stone {
     private String name;
     private String color;
 
-    public abstract int getFullPrice();
+    public   abstract int getFullPrice();
 
 }
 
