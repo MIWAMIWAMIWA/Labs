@@ -6,7 +6,6 @@ import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.swing.plaf.synth.SynthStyle;
 
 @NoArgsConstructor
 @Getter
@@ -21,16 +20,17 @@ public class StoneManager {
                 .toList();
     }
 
-    public void addStone(Stone stone) {
+    public void addStone(final Stone stone) {
         stones.add(stone);
     }
 
-    public void addStone(List<Stone> stoneList) {
+    public void addStone(final List<Stone> stoneList) {
         stones.addAll(stoneList);
     }
 
-    public List<Stone> findAllLower(int money) {
-        return stones.stream().filter(stone -> stone.getFullPrice() <= money).toList();
+    public List<Stone> findAllLower(final int money) {
+        return stones.stream()
+                .filter(stone -> stone.getFullPrice() <= money).toList();
     }
 
 }

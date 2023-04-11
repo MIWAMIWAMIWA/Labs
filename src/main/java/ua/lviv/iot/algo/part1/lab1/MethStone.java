@@ -10,11 +10,13 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class MethStone extends Stone {
+    public static final int  PERCENTAGE = 100;
     private int pound;
     private int clarity;
     private int pricePerPound;
 
-    public MethStone( final String name,final String color,final int pound,final int clarity,final int pricePerPound) {
+    public MethStone(final String name, final String color, final int pound,
+                      final int clarity, final int pricePerPound) {
         super(name, color);
         this.pound = pound;
         this.clarity = clarity;
@@ -23,7 +25,7 @@ public class MethStone extends Stone {
 
     @Override
     public int getFullPrice() {
-        return getPound() * getPricePerPound() * getClarity() / 100;
+        return getPound() * getPricePerPound() * getClarity() / PERCENTAGE;
     }
 
 }

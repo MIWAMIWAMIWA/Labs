@@ -2,8 +2,6 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -14,7 +12,7 @@ public class StoneManagerTest {
     private StoneManager manager;
     @BeforeEach
     public  void setUp() {
-        manager = new StoneManager();
+        manager=new StoneManager();
         manager.addStone(new ArtificialPreciousStone("coal", "black", 1000, 100));
         manager.addStone(new MethStone());
         manager.addStone(new ArtificialPreciousStone("soap", "black", 1000, 100));

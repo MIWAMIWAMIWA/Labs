@@ -18,7 +18,8 @@ public class ExplodingStone extends Stone {
         return getAmount() * getPricePerAmount();
     }
 
-    public ExplodingStone(final String name,final String color,final int amount, final int pricePerAmount) {
+    public ExplodingStone(final String name, final String color,
+                          final int amount, final int pricePerAmount) {
         super(name, color);
         this.amount = amount;
         this.pricePerAmount = pricePerAmount;

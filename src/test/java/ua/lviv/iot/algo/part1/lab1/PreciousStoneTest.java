@@ -1,7 +1,6 @@
 package ua.lviv.iot.algo.part1.lab1;
 
 import junit.framework.TestCase;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ public class PreciousStoneTest extends TestCase {
 
     @BeforeEach
     public void setUp() {
-        stone = new PreciousStone();
+        stone=new PreciousStone();
         stone.setName("miwa");
         stone.setColor("red");
         stone.setCarat(100);

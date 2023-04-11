@@ -19,7 +19,8 @@ public class ArtificialPreciousStone extends Stone {
         return getGram() * getPricePerGram();
     }
 
-    public ArtificialPreciousStone( final String name,final String color,final int gram,final int pricePerGram) {
+    public ArtificialPreciousStone(final String name, final String color,
+                                    final int gram, final int pricePerGram) {
         super(name, color);
         this.gram = gram;
         this.pricePerGram = pricePerGram;
