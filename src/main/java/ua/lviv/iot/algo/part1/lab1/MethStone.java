@@ -1,26 +1,31 @@
 package ua.lviv.iot.algo.part1.lab1;
-import lombok.*;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class MethStone extends Stone {
+    public static final int  PERCENTAGE = 100;
     private int pound;
     private int clarity;
     private int pricePerPound;
-    public MethStone(String name,String color,int pound,int clarity, int pricePerPound){
-        super(name,color);
-        this.pound=pound;
-        this.clarity=clarity;
-        this.pricePerPound=pricePerPound;
+
+    public MethStone(final String name, final String color, final int pound,
+                      final int clarity, final int pricePerPound) {
+        super(name, color);
+        this.pound = pound;
+        this.clarity = clarity;
+        this.pricePerPound = pricePerPound;
     }
+
     @Override
-    public int getFullPrice(){
-        return getPound()*getPricePerPound()*getClarity()/100;
+    public int getFullPrice() {
+        return getPound() * getPricePerPound() * getClarity() / PERCENTAGE;
     }
-    @Override
-    public String toString(){
-        return "MethStone(name="+getName()+", color="+getColor()+
-                ", pound="+getPound()+", pricePerPound="+getPricePerPound()+")";
-    }
+
 }

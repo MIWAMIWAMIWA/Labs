@@ -1,20 +1,19 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class PreciousStone extends Stone {
 
     private int carat;
     private int clarity;
     private int pricePerCarat;
-    private static PreciousStone defaultPreciousStone = new PreciousStone();
-
-    public static PreciousStone getInstance() {
-        return defaultPreciousStone;
-    }
 
     @Override
     public int getFullPrice() {
@@ -25,11 +24,14 @@ public class PreciousStone extends Stone {
         this.setClarity(this.getClarity() + 1);
     }
 
-    public void increasePrice(double percentage) {
-        this.setPricePerCarat((int) ((percentage + 1.0) * (double) this.getPricePerCarat()));
+    public void increasePrice(final double percentage) {
+        this.setPricePerCarat((int) ((percentage + 1.0)
+                * (double) this.getPricePerCarat()));
     }
 
-    public PreciousStone(String name, String color, int carat, int clarity, int pricePerCarat) {
+    public PreciousStone(final String name, final String color,
+                         final int carat, final int clarity,
+                         final int pricePerCarat) {
         super(name, color);
         this.carat = carat;
         this.clarity = clarity;
@@ -38,8 +40,10 @@ public class PreciousStone extends Stone {
 
     @Override
     public String toString() {
-        return "PreciousStone(name=" + getName() + ", color=" + getColor() + ", carat="+ getCarat()
-                + ", clarity=" + getClarity() + ", pricePerCarat=" + getPricePerCarat() + ")";
+        return "PreciousStone(name=" + getName() + ", color="
+                + getColor() + ", carat=" + getCarat()
+                + ", clarity=" + getClarity()
+                + ", pricePerCarat=" + getPricePerCarat() + ")";
     }
 
 
