@@ -12,9 +12,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Stone {
+    public static final String HEADERS = "name,color";
     private String name;
     private String color;
+    public String getHeaders()
 
+    {
+        return HEADERS;
+    }
+    public String toSCV(){
+        return name+","+color;
+    }
     public   abstract int getFullPrice();
 
 }

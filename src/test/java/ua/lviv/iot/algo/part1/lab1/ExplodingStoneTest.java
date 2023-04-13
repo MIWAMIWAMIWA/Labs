@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class ExplodingStoneTest {
 
     private ExplodingStone stone;
+
     @BeforeEach
     public void setUp() {
         stone = new ExplodingStone();
@@ -16,8 +17,9 @@ public class ExplodingStoneTest {
         stone.setColor("dark");
         stone.setPricePerAmount(100);
     }
+
     @Test
-    public void testGetFullPrice(){
-        assertEquals(300,stone.getFullPrice());
+    public void testGetFullPrice() {
+        assertEquals(300, stone.getFullPrice());
     }
 }

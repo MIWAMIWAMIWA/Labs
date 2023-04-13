@@ -7,18 +7,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ArtificialPreciousStoneTest {
-    private ArtificialPreciousStone stone ;
+    private ArtificialPreciousStone stone;
+
     @BeforeEach
     public void setUp() {
-        stone=new ArtificialPreciousStone();
+        stone = new ArtificialPreciousStone();
         stone.setGram(5);
         stone.setName("miwa");
         stone.setPricePerGram(100);
         stone.setColor("blue");
     }
+
     @Test
-    public void testGetFullPrice(){
-        Assert.assertEquals(500,stone.getFullPrice());
+    public void testGetFullPrice() {
+        Assert.assertEquals(500, stone.getFullPrice());
     }
 
 }

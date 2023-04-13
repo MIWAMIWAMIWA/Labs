@@ -11,13 +11,14 @@ public class MethStoneTest {
 
     @BeforeEach
     public void setUp() {
-        stone=new MethStone();
+        stone = new MethStone();
         stone.setClarity(90);
         stone.setPound(4);
         stone.setPricePerPound(40000);
         stone.setName("miwa");
         stone.setColor("blue");
     }
+
     @Test
     public void testGetFullPrice() {
         assertEquals(144000, stone.getFullPrice());

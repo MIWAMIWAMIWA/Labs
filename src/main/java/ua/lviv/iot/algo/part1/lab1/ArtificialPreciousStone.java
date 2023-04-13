@@ -11,6 +11,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class ArtificialPreciousStone extends Stone {
+    public static final String HEADERS = ",gram,pricePerGram";
     private int gram;
     private int pricePerGram;
 
@@ -25,5 +26,16 @@ public class ArtificialPreciousStone extends Stone {
         this.gram = gram;
         this.pricePerGram = pricePerGram;
     }
-
+    @Override
+    public String getHeaders()
+    {
+        return super.getHeaders() + HEADERS;
+    }
+    @Override
+    public String toSCV()
+    {
+        return super.toSCV() + ","
+                + Integer.toString(getGram())
+                + "," + Integer.toString(getPricePerGram());
+    }
 }
