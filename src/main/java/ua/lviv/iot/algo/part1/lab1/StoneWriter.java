@@ -15,9 +15,7 @@ public class StoneWriter {
 
     public void writeStones(final List<Stone> stones) {
         try {
-
-            FileWriter outputfile = new FileWriter(RESULTS, false);
-            CSVWriter writer = new CSVWriter(outputfile);
+            CSVWriter writer = new CSVWriter(new FileWriter(RESULTS, false));
             List<Stone> artPreStones = new LinkedList<>();
             List<Stone> preStones = new LinkedList<>();
             List<Stone> methStones = new LinkedList<>();

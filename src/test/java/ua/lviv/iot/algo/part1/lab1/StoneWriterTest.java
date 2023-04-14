@@ -29,7 +29,7 @@ class StoneWriterTest {
     }
 
     @Test
-    public void writeStones() {
+    public void testWriteStones() {
         stones.add(new ArtificialPreciousStone("coal", "black", 1000, 100));
         stones.add(new PreciousStone("ruby", "red", 100, 99, 10000));
         stones.add(new PreciousStone("emerald", "green", 143, 95, 20000));
@@ -67,20 +67,6 @@ class StoneWriterTest {
         stones.add(new MethStone("meth", "blue", 3, 97, 40003));
         stoneWriter.writeStones(stones);
         stones = new LinkedList<>();
-        stones.add(new ArtificialPreciousStone("coal", "black", 1000, 100));
-        stones.add(new PreciousStone("ruby", "red", 100, 99, 10000));
-        stones.add(new PreciousStone("emerald", "green", 143, 95, 20000));
-        stones.add(new PreciousStone("diamond", "blue", 200, 97, 30000));
-        stones.add(new MethStone("meth", "blue", 2, 95, 40000));
-        stones.add(new ExplodingStone("dynamite", "white", 1, 25000));
-        stones.add(new ExplodingStone("glycerine", "blue", 2, 1000));
-        stoneWriter.writeStones(stones);
-        try {
-            assertTrue(FileUtils.contentEquals(RESULTS, EXPECTED));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        testWriteStones();
     }
 }
