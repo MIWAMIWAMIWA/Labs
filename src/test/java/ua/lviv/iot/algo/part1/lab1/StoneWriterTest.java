@@ -14,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ua.lviv.iot.algo.part1.lab1.StoneWriter.RESULTS;
 
 class StoneWriterTest {
-    public static final File TEST_DATA = new File("C:/Users/MIHAILO/IdeaProjects/" +
-            "Labs/src/main/resources/test_data.scv");
+    public static final File EXPECTED = new File("C:/Users/MIHAILO/IdeaProjects/" +
+            "Labs/src/main/resources/expected.scv");
     public static final File EMPTY_DATA = new File("C:/Users/MIHAILO/IdeaProjects/" +
             "Labs/src/main/resources/empty_file.scv");
 
@@ -32,11 +32,14 @@ class StoneWriterTest {
     public void writeStones() {
         stones.add(new ArtificialPreciousStone("coal", "black", 1000, 100));
         stones.add(new PreciousStone("ruby", "red", 100, 99, 10000));
+        stones.add(new PreciousStone("emerald", "green", 143, 95, 20000));
+        stones.add(new PreciousStone("diamond", "blue", 200, 97, 30000));
         stones.add(new MethStone("meth", "blue", 2, 95, 40000));
         stones.add(new ExplodingStone("dynamite", "white", 1, 25000));
+        stones.add(new ExplodingStone("glycerine", "blue", 2, 1000));
         stoneWriter.writeStones(stones);
         try {
-            assertTrue(FileUtils.contentEquals(RESULTS, TEST_DATA));
+            assertTrue(FileUtils.contentEquals(RESULTS, EXPECTED));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -66,11 +69,14 @@ class StoneWriterTest {
         stones = new LinkedList<>();
         stones.add(new ArtificialPreciousStone("coal", "black", 1000, 100));
         stones.add(new PreciousStone("ruby", "red", 100, 99, 10000));
+        stones.add(new PreciousStone("emerald", "green", 143, 95, 20000));
+        stones.add(new PreciousStone("diamond", "blue", 200, 97, 30000));
         stones.add(new MethStone("meth", "blue", 2, 95, 40000));
         stones.add(new ExplodingStone("dynamite", "white", 1, 25000));
+        stones.add(new ExplodingStone("glycerine", "blue", 2, 1000));
         stoneWriter.writeStones(stones);
         try {
-            assertTrue(FileUtils.contentEquals(RESULTS, TEST_DATA));
+            assertTrue(FileUtils.contentEquals(RESULTS, EXPECTED));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

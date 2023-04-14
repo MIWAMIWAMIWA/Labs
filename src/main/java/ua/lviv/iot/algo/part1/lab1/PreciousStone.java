@@ -26,8 +26,7 @@ public class PreciousStone extends Stone {
         this.setClarity(this.getClarity() + 1);
     }
 
-    public void increasePrice(final double percentage)
-    {
+    public void increasePrice(final double percentage) {
         this.setPricePerCarat((int) ((percentage + 1.0)
                 * (double) this.getPricePerCarat()));
     }

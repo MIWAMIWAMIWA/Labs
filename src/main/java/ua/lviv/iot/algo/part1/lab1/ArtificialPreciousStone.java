@@ -27,13 +27,11 @@ public class ArtificialPreciousStone extends Stone {
         this.pricePerGram = pricePerGram;
     }
     @Override
-    public String getHeaders()
-    {
+    public String getHeaders() {
         return super.getHeaders() + HEADERS;
     }
     @Override
-    public String toSCV()
-    {
+    public String toSCV() {
         return super.toSCV() + ","
                 + Integer.toString(getGram())
                 + "," + Integer.toString(getPricePerGram());
