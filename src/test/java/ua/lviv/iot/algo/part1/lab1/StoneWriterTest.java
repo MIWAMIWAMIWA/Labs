@@ -15,11 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ua.lviv.iot.algo.part1.lab1.StoneWriter.RESULTS;
 
 class StoneWriterTest {
-    public static final File EXPECTED = new File("C:/Users/MIHAILO/IdeaProjects/" +
-            "Labs/src/main/resources/expected.scv");
-    public static final File EMPTY_DATA = new File("C:/Users/MIHAILO/IdeaProjects/" +
-            "Labs/src/main/resources/empty_file.scv");
-
+    public static final File EXPECTED =  new File("src"+File.separator
+            +"main" + File.separator
+            +"resources"+File.separator
+            +"expected.scv");
+    public static final File EMPTY_DATA = new File("src"+File.separator
+            +"main" + File.separator
+            +"resources"+File.separator
+            +"empty_file.scv");
     private List<Stone> stones;
     private StoneWriter stoneWriter;
 
@@ -42,11 +45,12 @@ class StoneWriterTest {
         try {
             assertTrue(FileUtils.contentEquals(RESULTS, EXPECTED));
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
             assertEquals(false,"FileNotFoundException");
-        } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (IOException e) {
             assertEquals(false,"IOException");
+            throw new RuntimeException(e);
+
 
         }
     }
@@ -58,11 +62,12 @@ class StoneWriterTest {
         try {
             assertTrue(FileUtils.contentEquals(RESULTS, EMPTY_DATA));
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
             assertEquals(false,"FileNotFoundException");
-        } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (IOException e) {
             assertEquals(false,"IOException");
+            throw new RuntimeException(e);
+
         }
     }
 
