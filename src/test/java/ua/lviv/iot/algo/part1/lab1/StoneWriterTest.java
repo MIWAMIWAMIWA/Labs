@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ua.lviv.iot.algo.part1.lab1.StoneWriter.RESULTS;
 
@@ -42,29 +43,31 @@ class StoneWriterTest {
             assertTrue(FileUtils.contentEquals(RESULTS, EXPECTED));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+            assertEquals(false,"FileNotFoundException");
         } catch (IOException e) {
             throw new RuntimeException(e);
+            assertEquals(false,"IOException");
+
         }
     }
 
     @Test
-    public void writeEmpty() {
+    public void testWriteEmpty()  {
         stones = new LinkedList<>();
         stoneWriter.writeStones(stones);
         try {
             assertTrue(FileUtils.contentEquals(RESULTS, EMPTY_DATA));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+            assertEquals(false,"FileNotFoundException");
         } catch (IOException e) {
             throw new RuntimeException(e);
+            assertEquals(false,"IOException");
         }
     }
 
     @Test
-    public void overwriteStones() {
-        stones.add(new MethStone("meth", "blue", 1, 95, 40001));
-        stones.add(new MethStone("meth", "blue", 2, 96, 40002));
-        stones.add(new MethStone("meth", "blue", 3, 97, 40003));
+    public void testOverwriteStones() {
         stoneWriter.writeStones(stones);
         stones = new LinkedList<>();
         testWriteStones();

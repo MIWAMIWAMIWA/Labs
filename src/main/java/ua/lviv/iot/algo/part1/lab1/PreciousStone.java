@@ -54,7 +54,7 @@ public class PreciousStone extends Stone {
     @Override
     public String toSCV() {
         return super.toSCV() + ","
-                + Integer.toString(getCarat())
+                + String.format(Integer.toString(getCarat()))
                 + "," + Integer.toString(getClarity())
                 + "," + Integer.toString(getPricePerCarat());
     }

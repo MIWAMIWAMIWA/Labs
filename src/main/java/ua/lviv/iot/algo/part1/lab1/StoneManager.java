@@ -32,5 +32,4 @@ public class StoneManager {
         return stones.stream()
                 .filter(stone -> stone.getFullPrice() <= money).toList();
     }
-
 }
