@@ -16,13 +16,13 @@ import static ua.lviv.iot.algo.part1.lab1.StoneWriter.RESULTS;
 
 class StoneWriterTest {
     public static final File EXPECTED =  new File("src"+File.separator
-            +"main" + File.separator
-            +"resources"+File.separator
-            +"expected.scv");
+             + "main" + File.separator
+             + "resources"+File.separator
+             + "expected.scv");
     public static final File EMPTY_DATA = new File("src"+File.separator
-            +"main" + File.separator
-            +"resources"+File.separator
-            +"empty_file.scv");
+             + "main" + File.separator
+             + "resources"+File.separator
+             + "empty_file.scv");
     private List<Stone> stones;
     private StoneWriter stoneWriter;
 
