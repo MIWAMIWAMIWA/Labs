@@ -11,6 +11,8 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class PreciousStone extends Stone {
 
+    public static final String HEADERS = ",carat,clarity,pricePerCarat";
+
     private int carat;
     private int clarity;
     private int pricePerCarat;
@@ -45,6 +47,15 @@ public class PreciousStone extends Stone {
                 + ", clarity=" + getClarity()
                 + ", pricePerCarat=" + getPricePerCarat() + ")";
     }
-
-
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+    @Override
+    public String toSCV() {
+        return super.toSCV() + ","
+                + String.format(Integer.toString(getCarat()))
+                + "," + Integer.toString(getClarity())
+                + "," + Integer.toString(getPricePerCarat());
+    }
 }

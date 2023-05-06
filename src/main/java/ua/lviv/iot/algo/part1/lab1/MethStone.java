@@ -10,6 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class MethStone extends Stone {
+    public static final String HEADERS = ",pound,clarity,pricePerPound";
     public static final int  PERCENTAGE = 100;
     private int pound;
     private int clarity;
@@ -27,5 +28,15 @@ public class MethStone extends Stone {
     public int getFullPrice() {
         return getPound() * getPricePerPound() * getClarity() / PERCENTAGE;
     }
-
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+    @Override
+    public String toSCV() {
+        return super.toSCV() + ","
+                + Integer.toString(getPound())
+                + "," + Integer.toString(getClarity())
+                + "," + Integer.toString(getPricePerPound());
+    }
 }

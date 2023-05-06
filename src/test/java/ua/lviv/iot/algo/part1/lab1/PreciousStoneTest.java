@@ -10,7 +10,7 @@ public class PreciousStoneTest extends TestCase {
 
     @BeforeEach
     public void setUp() {
-        stone=new PreciousStone();
+        stone = new PreciousStone();
         stone.setName("miwa");
         stone.setColor("red");
         stone.setCarat(100);

@@ -10,6 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class ExplodingStone extends Stone {
+    public static final String HEADERS = ",amount,pricePerAmount";
     private int amount;
     private int pricePerAmount;
 
@@ -24,5 +25,14 @@ public class ExplodingStone extends Stone {
         this.amount = amount;
         this.pricePerAmount = pricePerAmount;
     }
-
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+    @Override
+    public String toSCV() {
+        return super.toSCV() + ","
+                + Integer.toString(getAmount())
+                + "," + Integer.toString(getPricePerAmount());
+    }
 }
