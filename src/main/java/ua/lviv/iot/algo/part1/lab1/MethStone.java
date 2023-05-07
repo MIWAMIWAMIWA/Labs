@@ -10,6 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class MethStone extends Stone {
+    private Integer id;
     public static final String HEADERS = ",pound,clarity,pricePerPound";
     public static final int  PERCENTAGE = 100;
     private int pound;
