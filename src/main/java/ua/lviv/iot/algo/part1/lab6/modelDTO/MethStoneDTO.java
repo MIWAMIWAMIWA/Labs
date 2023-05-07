@@ -13,6 +13,6 @@ public class MethStoneDTO {
     private String color;
     private int pound;
     private int clarity;
-    private int  pricePerPound;
+    private int pricePerPound;
 
 }

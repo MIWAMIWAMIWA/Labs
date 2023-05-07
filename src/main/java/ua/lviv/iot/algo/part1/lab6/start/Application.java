@@ -6,12 +6,12 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({"ua.lviv.iot.algo.part1.lab6.controler",
-		"ua.lviv.iot.algo.part1.lab6.service"})
+        "ua.lviv.iot.algo.part1.lab6.service"})
 public class Application {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(Application.class, args);
-	}
+        SpringApplication.run(Application.class, args);
+    }
 
 }

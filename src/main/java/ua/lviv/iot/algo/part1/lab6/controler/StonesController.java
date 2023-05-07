@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab6.controler;
+
 import ua.lviv.iot.algo.part1.lab1.MethStone;
 import ua.lviv.iot.algo.part1.lab6.modelDTO.MethStoneDTO;
 import ua.lviv.iot.algo.part1.lab6.service.StoneService;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
 import java.util.List;
+
 @RequestMapping("/stones")
 @RestController
 public class StonesController {
@@ -16,7 +18,7 @@ public class StonesController {
     @Autowired
     private StoneService stoneService;
 
-    private MethStoneDTO formattingStone(MethStone stone){
+    private MethStoneDTO formatStone(final MethStone stone) {
         return new MethStoneDTO(
                 stone.getId(),
                 stone.getName(),
@@ -36,18 +38,18 @@ public class StonesController {
     @GetMapping
     public List<MethStoneDTO> getStones() {
         List<MethStoneDTO> response = new LinkedList<>();
-        for (MethStone stone: stoneService.giveAll()) {
-            response.add(formattingStone(stone));
+        for (MethStone stone : stoneService.giveAll()) {
+            response.add(formatStone(stone));
         }
         return response;
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<?> getStone(final @PathVariable("id") int stoneId) {
-        if (stoneService.containsID(stoneId)) {
+        if (!stoneService.hasStoneWith(stoneId)) {
             return FAILURE;
         } else {
-            return ResponseEntity.ok(formattingStone(stoneService
+            return ResponseEntity.ok(formatStone(stoneService
                     .giveStone(stoneId)));
         }
     }
@@ -55,7 +57,7 @@ public class StonesController {
     @PostMapping
     public MethStoneDTO createStone(final @RequestBody MethStone stone) {
         stoneService.addStone(stone);
-        return formattingStone(stoneService.giveStone(stone.getId()));
+        return formatStone(stoneService.giveStone(stone.getId()));
     }
 
     @DeleteMapping(path = "/{id}")
@@ -66,12 +68,12 @@ public class StonesController {
             return OK;
         }
     }
-    
+
     @PutMapping(path = "/{id}")
     public ResponseEntity updateMethStone(final @PathVariable("id") int stoneId,
-                                     final @RequestBody MethStone stone) {
-        if (stoneService.containsID(stoneId)) {
-            stoneService.addStone(stone);
+                                          final @RequestBody MethStone stone) {
+        if (stoneService.hasStoneWith(stoneId)) {
+            stoneService.replaceStone(stone, stoneId);
             return OK;
         } else {
             return FAILURE;

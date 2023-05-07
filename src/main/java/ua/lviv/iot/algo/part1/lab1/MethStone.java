@@ -16,7 +16,7 @@ public class MethStone extends Stone {
 
     public static final String HEADERS = ",id,pound,clarity,pricePerPound";
 
-    public static final int  PERCENTAGE = 100;
+    public static final int PERCENTAGE = 100;
 
     private int pound;
 
@@ -26,7 +26,7 @@ public class MethStone extends Stone {
 
 
     public MethStone(final String name, final String color, final int pound,
-                      final int clarity, final int pricePerPound) {
+                     final int clarity, final int pricePerPound) {
         super(name, color);
         this.pound = pound;
         this.clarity = clarity;
