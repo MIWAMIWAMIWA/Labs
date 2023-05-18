@@ -11,11 +11,11 @@ import java.util.List;
 public class StoneWriter {
     public static final File RESULTS = new File("src" + File.separator
              + "main" + File.separator
-             + "resources"+File.separator
+             + "resources" + File.separator
              + "results.scv");
 
     public void writeStones(final List<Stone> stones) {
-        try(CSVWriter writer = new CSVWriter(new FileWriter(RESULTS, false))) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(RESULTS, false))) {
             stones.sort(Comparator.comparing(o -> o.getClass().getName()));
             Class current = null;
             for (Stone stone : stones) {
